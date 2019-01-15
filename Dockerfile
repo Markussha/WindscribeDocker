@@ -14,7 +14,7 @@ RUN touch /etc/resolv.conf-docker ; rm /etc/resolv.conf ; ln -s /etc/resolv.conf
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
 RUN echo 'deb https://repo.windscribe.com/ubuntu zesty main' | tee /etc/apt/sources.list.d/windscribe-repo.list
 RUN apt-get -y --allow-unauthenticated update
-RUN apt-get -y --allow-unauthenticated install ifupdown
+RUN apt-get -y --allow-unauthenticated install net-tools
 RUN apt-get -y --allow-unauthenticated install windscribe-cli
 
 #install transmission
