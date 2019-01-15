@@ -5,7 +5,7 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 
 #install dumb-init
-RUN apt-get -y install wget gnupg resolvconf 
+RUN apt-get -y install wget gnupg ifupdown 
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64
 RUN chmod +x /usr/local/bin/dumb-init
 
