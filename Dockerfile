@@ -13,12 +13,19 @@ RUN echo 'deb https://repo.windscribe.com/ubuntu zesty main' | sudo tee /etc/apt
 RUN apt -y update
 RUN apt -y install windscribe-cli
 
+#install transmission
+RUN apt -y install transmission-daemon
+
 #only allow vpn connections
 #Todo
 
 #run dumb-init
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
-#start proxy
+#start vpn
+EXPOSE 9091
+EXPOSE 8888
 CMD ["windscribe","connect"]
+#start transmission
+CMD ["/usr/bin/transmission-daemon"]
 
