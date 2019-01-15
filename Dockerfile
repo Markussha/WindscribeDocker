@@ -10,6 +10,7 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 RUN chmod +x /usr/local/bin/dumb-init
 
 #install windscribe-cli
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
 RUN echo 'deb https://repo.windscribe.com/ubuntu zesty main' | tee /etc/apt/sources.list.d/windscribe-repo.list
 RUN apt-get -y --allow-unauthenticated update
 RUN apt-get -y --allow-unauthenticated install windscribe-cli
